@@ -1,6 +1,6 @@
 {
   "name": "envwatch",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "CI-first environment variable visibility for Node.js projects",
   "main": "dist/index.js",
   "bin": {

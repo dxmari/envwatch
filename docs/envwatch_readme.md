@@ -9,7 +9,7 @@
 
 Environment variables are one of the most fragile parts of modern applications.
 
-Teams often don't know:
+Teams often don’t know:
 - Which environment variables are **actually used** in code
 - Which ones are **missing in CI or production**
 - Which ones are **unused or obsolete**
@@ -62,12 +62,6 @@ No global installation required.
 npx envwatch
 ```
 
-Or install locally:
-
-```bash
-npm install --save-dev envwatch
-```
-
 ---
 
 ## Usage
@@ -80,28 +74,15 @@ npx envwatch
 
 Prints a configuration summary to stdout.
 
+---
+
 ### CI Usage (Primary)
 
 Envwatch is designed to run in CI and surface configuration issues early.
 
 ```yaml
-# GitHub Actions example
 - name: Envwatch
   run: npx envwatch --ci
-```
-
-### Command Line Options
-
-```bash
-npx envwatch [options]
-
-Options:
-  --ci              CI-friendly output mode
-  --json            Machine-readable JSON output
-  --path <path>     Project path to analyze (default: current directory)
-  --exclude <...>   Additional exclusion patterns
-  -h, --help        Display help
-  -V, --version     Display version
 ```
 
 ---
@@ -109,7 +90,7 @@ Options:
 ## Operating Modes
 
 | Mode | Behavior | Exit Code |
-|------|----------|-----------|
+|----|----|----|
 | Default | Report only | `0` |
 | `--ci` | CI‑friendly output | `0` |
 | `--json` | Machine‑readable output | `0` |
@@ -158,7 +139,7 @@ Generate summary
 ## Comparison
 
 | Tool | Focus | Envwatch Advantage |
-|------|-------|-------------------|
+|----|----|----|
 | dotenv | Loading vars | Usage visibility |
 | CI env configs | Setup | Drift detection |
 | Envwatch | Analysis | Review‑ready insights |
@@ -182,30 +163,6 @@ Generate summary
 
 ---
 
-## Development
-
-### Building
-
-```bash
-npm install
-npm run build
-```
-
-### Testing
-
-```bash
-npm test
-```
-
-### Running Locally
-
-```bash
-npm run build
-node dist/cli.js
-```
-
----
-
 ## Contributing
 
 Contributions are welcome.
@@ -226,14 +183,9 @@ Contributions are welcome.
 
 ---
 
-## License
-
-MIT
-
----
-
 ## Final Note
 
 > Configuration bugs are silent until they are catastrophic.
 
 Envwatch restores **clarity, confidence, and control** to environment‑based configuration.
+

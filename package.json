@@ -1,0 +1,40 @@
+{
+  "name": "envwatch",
+  "version": "1.0.0",
+  "description": "CI-first environment variable visibility for Node.js projects",
+  "main": "dist/index.js",
+  "bin": {
+    "envwatch": "./dist/cli.js"
+  },
+  "scripts": {
+    "build": "tsc && node scripts/add-shebang.js",
+    "dev": "tsc --watch",
+    "test": "npm run build && node --test dist/tests/**/*.test.js",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "environment-variables",
+    "ci",
+    "static-analysis",
+    "configuration",
+    "devops"
+  ],
+  "author": "",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "commander": "^11.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "typescript": "^5.3.3"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ]
+}
+

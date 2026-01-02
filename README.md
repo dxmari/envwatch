@@ -175,32 +175,7 @@ const dbUrl = process.env.DATABASE_URL || 'localhost';
 
 Envwatch uses **static analysis** to understand your codebase without executing it. Here's the complete flow:
 
-> **Visual Diagram**: See [envwatch-flow-diagram.png](docs/envwatch-flow-diagram.png) for a detailed visual representation of the process.
-
-```mermaid
-flowchart TD
-    Start["Start: CLI Command"] --> Scanner["File Scanner"]
-    Scanner --> Decision1{"Scan Source Files"}
-    Decision1 -->|Include| Filter["Filter: .ts, .js, .tsx, .jsx"]
-    Decision1 -->|Exclude| Exclude["Exclude: node_modules, dist, etc."]
-    Filter --> Parser["AST Parser"]
-    Exclude --> Parser
-    Parser --> TSAPI["TypeScript Compiler API"]
-    TSAPI --> Extract["Extract process.env References"]
-    Extract --> Pattern["Pattern Detection"]
-    Pattern --> Compare["Compare with Available Env Vars"]
-    Compare --> Analyze["Analyze Gaps"]
-    Analyze --> Detect["Detect Risky Patterns"]
-    Detect --> Format["Format Output"]
-    Format --> Decision2{"Output Mode?"}
-    Decision2 -->|default| Human["Human-Readable"]
-    Decision2 -->|--ci| CI["CI-Friendly"]
-    Decision2 -->|--json| JSON["JSON Format"]
-    Human --> Display["Display Results"]
-    CI --> Display
-    JSON --> Display
-    Display --> Exit["Exit Code 0"]
-```
+![How It Works - Envwatch Flow Diagram](docs/envwatch-flow-diagram.png)
 
 ### Step-by-Step Process
 
@@ -797,45 +772,7 @@ Current test coverage includes:
 
 ### System Architecture
 
-```mermaid
-graph TB
-    subgraph "CLI Layer"
-        A[cli.ts<br/>Command Line Interface]
-    end
-    
-    subgraph "Core Modules"
-        B[scanner.ts<br/>File Discovery]
-        C[parser.ts<br/>AST Creation]
-        D[extractor.ts<br/>Reference Extraction]
-        E[analyzer.ts<br/>Gap Analysis]
-        F[detector.ts<br/>Pattern Detection]
-    end
-    
-    subgraph "Output Layer"
-        G[formatters/default.ts<br/>Human-Readable]
-        H[formatters/ci.ts<br/>CI-Friendly]
-        I[formatters/json.ts<br/>Machine-Readable]
-    end
-    
-    subgraph "Data Flow"
-        J[Source Files] --> B
-        B --> C
-        C --> D
-        D --> E
-        D --> F
-        E --> G
-        E --> H
-        E --> I
-        F --> G
-        F --> H
-        F --> I
-    end
-    
-    A --> B
-    A --> G
-    A --> H
-    A --> I
-```
+![System Architecture - Envwatch Components](docs/envwatch-system-architecture.png)
 
 ### Module Responsibilities
 
@@ -921,7 +858,7 @@ interface AnalysisResult {
 
 ```bash
 # Clone the repository
-git clone https://github.com/your-org/envwatch.git
+git clone https://github.com/dxmari/envwatch.git
 cd envwatch
 
 # Install dependencies
@@ -1077,8 +1014,8 @@ Start using it today to:
 
 ## Support & Resources
 
-- **Issues**: [GitHub Issues](https://github.com/your-org/envwatch/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/your-org/envwatch/discussions)
+- **Issues**: [GitHub Issues](https://github.com/dxmari/envwatch/issues)
+- **Discussions**: [GitHub Discussions](https://github.com/dxmari/envwatch/discussions)
 - **Documentation**: This README
 
 ---

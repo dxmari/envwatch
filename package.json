@@ -1,7 +1,7 @@
 {
   "name": "envwatch",
-  "version": "1.0.1",
-  "description": "CI-first environment variable visibility for Node.js projects",
+  "version": "1.0.2",
+  "description": "CI-first environment variable visibility tool for Node.js. Detect missing, unused, and risky environment variables before they break builds or production. Static analysis for process.env usage.",
   "main": "dist/index.js",
   "bin": {
     "envwatch": "./dist/cli.js"
@@ -14,13 +14,61 @@
   },
   "keywords": [
     "environment-variables",
-    "ci",
-    "static-analysis",
+    "env",
+    "process-env",
+    "env-vars",
+    "environment",
     "configuration",
-    "devops"
+    "config",
+    "ci",
+    "continuous-integration",
+    "github-actions",
+    "gitlab-ci",
+    "circleci",
+    "jenkins",
+    "static-analysis",
+    "static-analysis-tool",
+    "code-analysis",
+    "ast",
+    "typescript",
+    "javascript",
+    "nodejs",
+    "node",
+    "devops",
+    "sre",
+    "monitoring",
+    "security",
+    "missing-variables",
+    "unused-variables",
+    "env-detection",
+    "env-scanner",
+    "env-analyzer",
+    "env-checker",
+    "env-validator",
+    "env-audit",
+    "dotenv",
+    "env-file",
+    "ci-cd",
+    "build-tools",
+    "development-tools",
+    "developer-tools",
+    "cli",
+    "command-line",
+    "command-line-tool",
+    "cli-tool"
   ],
-  "author": "",
+  "author": {
+    "name": "Envwatch Contributors"
+  },
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dxmari/envwatch.git"
+  },
+  "homepage": "https://github.com/dxmari/envwatch#readme",
+  "bugs": {
+    "url": "https://github.com/dxmari/envwatch/issues"
+  },
   "engines": {
     "node": ">=18.0.0"
   },
